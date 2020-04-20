@@ -224,9 +224,10 @@
 			\item The PRC and ROC curves are indicative of how well a model performs.
 			\item The PRC curve depends on the class priors, whereas ROC curve does not. This can be verified through the large deviations in PRC curves of some folds in the simple models, whereas all the ROC curves for that model are roughly the same.
 			\item The rightmost point of the PRC curve is on the coordinates $(1, p(Y=1))$. Also that the curve may sometimes begin at $(0,0)$ and shoot straight up to $(0,1)$.
-			\item Data cleaning, data preprocessing and evaluation are some really important (though not the most fun) aspects of practical machine learning. These things constituted more than 80\% of the time spent on this project.
+			\item Data cleaning, data preprocessing and evaluation are some really important (though not the most fun or interesting) aspects of practical machine learning. These things constituted more than 80\% of the time spent on this project.
 		\end{enumerate}
 	\item An interesting (but expected) observation is that the distributions actually look Gaussian (or a mixture of Gaussians).
+	\item Another interesting observation made during the project, but it is actually not shown here, is that convolutional neural networks with 2-D (instead of 1-D) convolution layers were actually performing worse. This makes sense because even though we encode the data in 2-D matrices, it still essentially is a 1-D sequence of Amino Acids.
 	\end{enumerate}
 	
 	
