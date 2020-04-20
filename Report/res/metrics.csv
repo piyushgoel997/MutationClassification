@@ -1,0 +1,17 @@
+,,,,,,,,,
+h,Number of model parameters,,,Train metrics,,Validation metrics,,,Accuracy1
+,Total,Trainable,Non-trainable,Accuracy,Loss,Accuracy,Loss,ROC AUC,
+Simple Model,,,,,,,,,
+1,18853,18659,194,0.9463,0.0434,0.8998,0.0793,0.9112,0.8968
+2,39653,39331,322,0.9551,0.0386,0.901,0.0849,0.8931,0.8937
+4,81253,80675,578,0.9787,0.02,0.9075,0.084,0.8873,0.9033
+Complex Model,,,,,,,,,
+1,28325,28131,194,0.9477,0.0435,0.8975,0.0909,0.8946,0.8935
+2,57317,56995,322,0.9695,0.0287,0.907,0.0813,0.8987,0.9003
+4,115301,114723,578,0.9926,0.0075,0.9116,0.0754,0.9248,0.931
+,,,,,,*All values are trimmed to only 4 decimal places,,,
+,,,,,,,,,
+,,,pathogenic mutation ct,40312,,,,,
+,,,total mutation in bigenes,193800,,,,,
+,,,bigenes,2613,,,,,
+,,,Accuracy1,accuracy of the model only on the protiens which can have both type of mutations,,,,,
