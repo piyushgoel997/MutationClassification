@@ -1,0 +1,38 @@
+# Command to separate queries by the chromosome type 
+time awk -F ',' '{print >> (""$2".csv")}' corrected_data.csv
+
+real    6m59.943s
+user    2m23.063s
+sys     4m31.563s
+
+
+# Unzip all the chr files
+for filename in ./*.gz
+do
+	gunzip "${filename}"
+done
+
+
+# write all the incorrect queries to another file
+awk -F ',' '{OFS=FS}{chk_str = $7substr($5,2,2)}{if(chk_str != $8) print}' full_set_snp_info.csv | awk -F ',' '{OFS=FS}{chk_str = substr($5,1,1)$7substr($5,3,1)}{if(chk_str != $8) print "$1,$2,$"}' | awk -F ',' '{OFS=FS}{chk_str = substr($5,1,2)$7}{if(chk_str != $8) print}' > wrong_data
+
+
+# write the correct and the corrected version of incorrect queries to another file
+time awk -F ',' '{OFS=FS}{a = $7substr($5,2,2)}{b = substr($5,1,1)$7substr($5,3,1)}{c = substr($5,1,2)$7}{if((a!=$8 && b!= $8) && c!= $8) print $1","$2","$3","$7","$5","$9","$4","$8","$6","$10","$11","$12","$13","$14","$15","$16","$17","$18","$19; else print}' full_set_snp_info.csv > "corrected_data.csv"
+
+real    5m58.716s
+user    4m5.344s
+sys     1m53.109s
+
+
+# remove unnecessary data from the ClinVar File
+time awk '/<Description>/ || /<ClinVarSet/ || /<SequenceLocation/ || /<\/ClinVarSet/ {print}' ClinVarFullRelease_00-latest.xml > iter1
+
+real    3m53.942s
+user    3m29.656s
+sys     0m23.844s
+
+
+time awk -F ',' '{OFS=FS}{a = $7substr($5,2,2)}{b = substr($5,1,1)$7substr($5,3,1)}{c = substr($5,1,2)$7}{if((a!=$8 && b!= $8) && c!= $8) print $1","$2","$3","$7","$5","$9","$4","$8","$6","$10","$11","$12","$13","$14","$15","$16","$17","$18","$19; else print}' full_set_snp_info.csv > "corrected_data.csv"
+
+time awk -F ',' '{OFS=FS}{print $6" "$7" "$8" "$9}' pre_final > pre_final2

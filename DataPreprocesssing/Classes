@@ -1,0 +1,17 @@
+{'Pathogenic': 62586, 'Pathogenic/Likely pathogenic': 2184, 'Likely pathogenic': 37304, 'Benign': 122026, 'Conflicting interpretations of pathogenicity': 14915, 'Pathogenic, risk factor': 12, 'Benign/Likely benign': 8626, 'Pathogenic, drug response': 2, 'Pathogenic, Affects': 4, 'Pathogenic, other': 7, 'Likely benign': 222416, 'Likely pathogenic, risk factor': 2, 'Likely benign, other': 16, 'Likely pathogenic, other': 4, 'Benign, other': 13, 'Pathogenic, association': 2, 'Conflicting interpretations of pathogenicity, other': 6, 'Benign/Likely benign, other': 4, 'Conflicting interpretations of pathogenicity, risk factor': 4, 'Pathogenic/Likely pathogenic, risk factor': 2, 'Benign/Likely benign, risk factor': 1, 'Likely pathogenic, Affects': 1}
+
+
+
+Possible descriptions left if ignoring all whose count is less than 1000 and don't contain either of the keywords pathogenic and benign
+
+Pathogenic 62586
+Pathogenic/Likely pathogenic 2184
+Likely pathogenic 37304
+Benign 122026
+Benign/Likely benign 8626
+Likely benign 222416
+
+= 455142
+
+
+Total 455676 (not same because some have multiple mutations)
